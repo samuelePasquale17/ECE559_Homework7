@@ -114,9 +114,7 @@ class NeuralNetwork(nn.Module):
 # *****************************************************************************
 # Optimizing the neural network
 # *****************************************************************************
-# Optimization with:
-# Epochs = 50
-# Learning rate = 0.3
+# ...
 
 
 model = NeuralNetwork().to(device)
@@ -160,7 +158,7 @@ def test_loop(dataloader, model, loss_fn):
 # Optimization parameters and initialization
 # *****************************************************************************
 loss_fn = nn.MSELoss()  # Mean squared error
-learning_rate = 0.1  # Learning rate as specified
+learning_rate = 0.3  # Learning rate as specified
 optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
 # *****************************************************************************
@@ -168,7 +166,7 @@ optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 # *****************************************************************************
 print(model)
 print("Training model...")
-epochs = 10  # Train for 10 epochs as specified
+epochs = 50  # Train for 10 epochs as specified
 for t in range(epochs):
     print(f"Epoch {t+1}\n-------------------------------")
     train_loop(train_dataloader, model, loss_fn, optimizer)
